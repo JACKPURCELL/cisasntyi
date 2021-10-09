@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	SearchUrl = "https://www.apple.com.cn/shop/fulfillment-messages"
+	SearchUrl = "https://www.apple.com/hk-zh/shop/fulfillment-messages"
 )
 
 type Apple struct {
@@ -115,7 +115,7 @@ func (apple *Apple) sendNotificationToBarkApp(messages []*Message) {
 }
 
 func (apple *Apple) hasStockOffline(s string) bool {
-	return strings.Contains(s, "可取货") && !strings.Contains(s, "不")
+	return strings.Contains(s, "備妥於") && !strings.Contains(s, "不")
 }
 
 func (apple *Apple) unMarshalResp(resp *http.Response) (*SearchResponse, error) {
